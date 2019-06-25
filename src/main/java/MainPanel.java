@@ -8,10 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+import java.text.DateFormat;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class MainPanel {
     public JPanel mainJpanel;
@@ -265,7 +267,19 @@ public class MainPanel {
                     }
                     frame.pack();
                     frame.setVisible(true);
-                 }
+
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy HH-mm-ss");
+                    Date date = new Date();
+
+                    BufferedImage img = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_RGB);
+                    panel.paint(img.getGraphics());
+                    File outputfile = new File("saved_" + dateFormat.format(date) + ".png");
+                    try {
+                        ImageIO.write(img, "png", outputfile);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
                 else {
                     JOptionPane.showMessageDialog(frame, "Remplissez tous les champs correctement.");
                 }
