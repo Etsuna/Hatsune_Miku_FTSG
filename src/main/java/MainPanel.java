@@ -8,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -89,22 +88,7 @@ public class MainPanel {
         });
 
         // Button
-        screenshot.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                BufferedImage img = new BufferedImage(screenshot.getWidth(), screenshot.getHeight(), BufferedImage.TYPE_INT_RGB);
-                screenshot.paint(img.getGraphics());
-                File outputfile = new File("saved.png");
-                try {
-                    ImageIO.write(img, "png", outputfile);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-
-
-        generateButton.addActionListener(new ActionListener() {
+         generateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 float comboBoxmini = Float.valueOf((String) comboBox1.getSelectedItem());
                 float comboBoxmaxi = Float.valueOf((String) comboBox2.getSelectedItem());
@@ -121,7 +105,7 @@ public class MainPanel {
                 if ((comboBoxmini < comboBoxmaxi || comboBoxmini == comboBoxmaxi) && (easyCheckBox.isSelected() || easyCheckBox.isSelected() ||
                         normalCheckBox.isSelected() || hardCheckBox.isSelected() || extremeCheckBox.isSelected() || exExtremeCheckBox.isSelected()) && breakSwitch == false){
 
-                    JPanel panel = new JPanel();
+                    final JPanel panel = new JPanel();
                     panel.setBackground(Color.CYAN);
                     panel.setBorder(new EmptyBorder(0, 10, 0, 10));
                     // Y_AXIS means each component added will be added vertically
@@ -279,14 +263,9 @@ public class MainPanel {
                         frame.add(panel);
 
                     }
-                    JButton button = new JButton("Save");
-                    button.setBounds(50,100,100,50); /*Distance from left,
-                      Distance from top,length of button, height of button*/
-                    button.add(screenshot);
                     frame.pack();
                     frame.setVisible(true);
-
-                }
+                 }
                 else {
                     JOptionPane.showMessageDialog(frame, "Remplissez tous les champs correctement.");
                 }
