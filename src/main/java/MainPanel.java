@@ -31,6 +31,15 @@ public class MainPanel {
     private JPanel fieldJpanel;
     private boolean breakSwitch = true;
 
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Hatsune Miku FT Music Generator ");
+        frame.setContentPane(new MainPanel().mainJpanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setResizable(false);
+    }
+
     // Panel
     public MainPanel() {
 

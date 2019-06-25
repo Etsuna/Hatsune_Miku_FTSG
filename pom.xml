@@ -119,7 +119,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>main</mainClass>
+                            <mainClass>MainPanel</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
