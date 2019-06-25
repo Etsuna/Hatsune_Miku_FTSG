@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Built-By: ${user.name}
+Build-Jdk: ${java.version}
+Created-By: Apache Maven
+Main-Class: main
+Archiver-Version: Plexus Archiver
+Class-Path: dependency-jars/forms_rt.jar
