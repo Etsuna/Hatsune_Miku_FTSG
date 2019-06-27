@@ -1,3 +1,9 @@
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -125,121 +131,44 @@ public class MainPanel {
                     ArrayList<String> song = new ArrayList<>();
 
                     if (easyCheckBox.isSelected()) {
-                        String csvFile = "./classes/easy.csv";
-                        String line = "";
-                        String cvsSplitBy = ";";
-                        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-                            while ((line = br.readLine()) != null) {
-                                String[] csvfile = line.split(cvsSplitBy);
-                                float size = Float.valueOf(csvfile[1].trim()).floatValue();
-                                if (size >= comboBoxmini && size <= comboBoxmaxi) {
-                                    System.out.println("titre " + csvfile[0] + " " + csvfile[1]);
-                                    song.add(csvfile[0] + " | Difficulté : Easy | Niveau : " + csvfile[1]);
-
-                                }
-                            }
-                        } catch (FileNotFoundException ex) {
-                            ex.printStackTrace();
+                        try {
+                            new ReadXLS(0, "Easy", song, comboBoxmini, comboBoxmaxi);
                         } catch (IOException ex) {
                             ex.printStackTrace();
-                        } catch (NumberFormatException nfe) {
-                            System.err.println("NumberFormatException: " + nfe.getMessage());
                         }
                     }
 
+
                     if (normalCheckBox.isSelected()) {
-
-                        String csvFile = "./classes/normal.csv";
-                        String line = "";
-                        String cvsSplitBy = ";";
-                        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-                            while ((line = br.readLine()) != null) {
-                                String[] csvfile = line.split(cvsSplitBy);
-                                float size = Float.valueOf(csvfile[1].trim()).floatValue();
-                                if (size >= comboBoxmini && size <= comboBoxmaxi) {
-                                    System.out.println("titre " + csvfile[0] + " " + csvfile[1]);
-                                    song.add(csvfile[0] + " | Difficulté : Normal | Niveau : " + csvfile[1]);
-
-                                }
-                            }
-                        } catch (FileNotFoundException ex) {
-                            ex.printStackTrace();
+                        try {
+                            new ReadXLS(1, "Normal", song, comboBoxmini, comboBoxmaxi);
                         } catch (IOException ex) {
                             ex.printStackTrace();
-                        } catch (NumberFormatException nfe) {
-                            System.err.println("NumberFormatException: " + nfe.getMessage());
                         }
                     }
 
                     if (hardCheckBox.isSelected()) {
-
-                        String csvFile = "./classes/hard.csv";
-                        String line = "";
-                        String cvsSplitBy = ";";
-                        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-                            while ((line = br.readLine()) != null) {
-                                String[] csvfile = line.split(cvsSplitBy);
-                                float size = Float.valueOf(csvfile[1].trim()).floatValue();
-                                if (size >= comboBoxmini && size <= comboBoxmaxi) {
-                                    System.out.println("titre " + csvfile[0] + " " + csvfile[1]);
-                                    song.add(csvfile[0] + " | Difficulté : Hard | Niveau : " + csvfile[1]);
-
-                                }
-                            }
-                        } catch (FileNotFoundException ex) {
-                            ex.printStackTrace();
+                        try {
+                            new ReadXLS(2, "Hard", song, comboBoxmini, comboBoxmaxi);
                         } catch (IOException ex) {
                             ex.printStackTrace();
-                        } catch (NumberFormatException nfe) {
-                            System.err.println("NumberFormatException: " + nfe.getMessage());
                         }
                     }
 
                     if (extremeCheckBox.isSelected()) {
-
-                        String csvFile = "./classes/extreme.csv";
-                        String line = "";
-                        String cvsSplitBy = ";";
-                        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-                            while ((line = br.readLine()) != null) {
-                                String[] csvfile = line.split(cvsSplitBy);
-                                float size = Float.valueOf(csvfile[1].trim()).floatValue();
-                                if (size >= comboBoxmini && size <= comboBoxmaxi) {
-                                    System.out.println("titre " + csvfile[0] + " " + csvfile[1]);
-                                    song.add(csvfile[0] + " | Difficulté : Extreme | Niveau : " + csvfile[1]);
-
-                                }
-                            }
-                        } catch (FileNotFoundException ex) {
-                            ex.printStackTrace();
+                        try {
+                            new ReadXLS(3, "Extreme", song, comboBoxmini, comboBoxmaxi);
                         } catch (IOException ex) {
                             ex.printStackTrace();
-                        } catch (NumberFormatException nfe) {
-                            System.err.println("NumberFormatException: " + nfe.getMessage());
                         }
+
                     }
 
                     if (exExtremeCheckBox.isSelected()) {
-
-                        String csvFile = "./classes/exextreme.csv";
-                        String line = "";
-                        String cvsSplitBy = ";";
-                        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-                            while ((line = br.readLine()) != null) {
-                                String[] csvfile = line.split(cvsSplitBy);
-                                float size = Float.valueOf(csvfile[1].trim()).floatValue();
-                                if (size >= comboBoxmini && size <= comboBoxmaxi) {
-                                    System.out.println("titre " + csvfile[0] + " " + csvfile[1]);
-                                    song.add(csvfile[0] + " | Difficulté : Ex-Extreme | Niveau : " + csvfile[1]);
-
-                                }
-                            }
-                        } catch (FileNotFoundException ex) {
-                            ex.printStackTrace();
+                        try {
+                            new ReadXLS(4, "Ex Extreme", song, comboBoxmini, comboBoxmaxi);
                         } catch (IOException ex) {
                             ex.printStackTrace();
-                        } catch (NumberFormatException nfe) {
-                            System.err.println("NumberFormatException: " + nfe.getMessage());
                         }
                     }
 
@@ -261,7 +190,7 @@ public class MainPanel {
                     Collections.shuffle(song);
                     System.out.println(song);
 
-                    /*for (String word : song) {*/
+                    //*for (String word : song) {*//*
                     for (int i = 1; i <= textfield; i++) {
                         float randomIndex = rand.nextInt(song.size());
                         String randomElement = song.get((int) randomIndex);
@@ -269,7 +198,7 @@ public class MainPanel {
                         System.out.println(randomElement);
 
                         JLabel j1 = new JLabel(randomElement);
-                        j1.setFont(new Font("Nirmala UI", Font.BOLD, 16));
+                        j1.setFont(new Font("MSMINCHO", Font.BOLD, 16));
                         panel.add(j1);
                         frame.add(panel);
 
