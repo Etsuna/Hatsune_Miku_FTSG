@@ -22,9 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class MainPanel {
-    public JPanel mainJpanel;
+    private JPanel mainJpanel;
     private JButton generateButton;
-    private JButton screenshot;
     private JCheckBox easyCheckBox;
     private JCheckBox normalCheckBox;
     private JCheckBox hardCheckBox;
@@ -41,13 +40,15 @@ public class MainPanel {
         JFrame frame = new JFrame("Hatsune Miku FT Music Generator ");
         frame.setContentPane(new MainPanel().mainJpanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         frame.pack();
         frame.setVisible(true);
-        frame.setResizable(false);
+        frame.setResizable(true);
     }
 
     // Panel
     public MainPanel() {
+
 
         // Check box
         easyCheckBox.addItemListener(new ItemListener() {
@@ -122,8 +123,18 @@ public class MainPanel {
                 if ((comboBoxmini < comboBoxmaxi || comboBoxmini == comboBoxmaxi) && (easyCheckBox.isSelected() || easyCheckBox.isSelected() ||
                         normalCheckBox.isSelected() || hardCheckBox.isSelected() || extremeCheckBox.isSelected() || exExtremeCheckBox.isSelected()) && breakSwitch == false){
 
-                    final JPanel panel = new JPanel();
-                    panel.setBackground(Color.CYAN);
+                    final JPanel panel = new JPanel(){
+                        protected void paintComponent(Graphics g)
+                        {
+                            super.paintComponent(g);
+
+                            ImageIcon m = new ImageIcon("C:\\Users\\Etsuna\\Documents\\GitHub\\HatsuneMiku\\src\\main\\resources\\wallpaper.jpg");
+                            Image monImage = m.getImage();
+                            g.drawImage(monImage, 0, 0, this);
+
+                        }
+                    };
+                    panel.setBackground(Color.BLACK);
                     panel.setBorder(new EmptyBorder(0, 10, 0, 10));
                     // Y_AXIS means each component added will be added vertically
                     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -177,7 +188,7 @@ public class MainPanel {
                     double textfield = Double.valueOf(textField1.getText());
                     Random rand = new Random();
 
-                    System.out.println("Results after shuffle operation #1:");
+                    System.out.println("Shuffle x 10 :");
                     Collections.shuffle(song);
                     Collections.shuffle(song);
                     Collections.shuffle(song);
@@ -199,10 +210,10 @@ public class MainPanel {
 
                         JLabel j1 = new JLabel(randomElement);
                         j1.setFont(new Font("MSMINCHO", Font.BOLD, 16));
+                        j1.setForeground(Color.ORANGE);
                         panel.add(j1);
-                        frame.add(panel);
-
                     }
+                    frame.add(panel);
                     frame.pack();
                     frame.setVisible(true);
 
@@ -224,5 +235,19 @@ public class MainPanel {
             }
 
         });
+    }
+
+    private void createUIComponents() {
+        mainJpanel = new JPanel() {
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+
+                ImageIcon m = new ImageIcon("C:\\Users\\Etsuna\\Documents\\GitHub\\HatsuneMiku\\src\\main\\resources\\logo.png");
+                Image monImage = m.getImage();
+                g.drawImage(monImage, 0, 0, this);
+
+            }
+        };
+
     }
 }
