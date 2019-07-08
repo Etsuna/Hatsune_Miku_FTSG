@@ -14,7 +14,7 @@ public class ReadXLS {
 
     public ReadXLS(int sheetpage, String difficulty, ArrayList song, float comboBoxmini, float comboBoxmaxi) throws IOException {
         // Read XSL file
-        FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\Etsuna\\Documents\\GitHub\\HatsuneMiku\\src\\main\\resources\\MusicList.xls"));
+        FileInputStream inputStream = new FileInputStream(new File("./classes/MusicList.xls"));
 
         // Get the workbook instance for XLS file
         HSSFWorkbook workbook = new HSSFWorkbook(inputStream);

@@ -1,9 +1,3 @@
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -16,8 +10,6 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.text.DateFormat;
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -43,7 +35,7 @@ public class MainPanel {
 
         frame.pack();
         frame.setVisible(true);
-        frame.setResizable(true);
+        frame.setResizable(false);
     }
 
     // Panel
@@ -128,7 +120,7 @@ public class MainPanel {
                         {
                             super.paintComponent(g);
 
-                            ImageIcon m = new ImageIcon("C:\\Users\\Etsuna\\Documents\\GitHub\\HatsuneMiku\\src\\main\\resources\\wallpaper.jpg");
+                            ImageIcon m = new ImageIcon("./classes/wallpaper.jpg");
                             Image monImage = m.getImage();
                             g.drawImage(monImage, 0, 0, this);
 
@@ -210,7 +202,7 @@ public class MainPanel {
 
                         JLabel j1 = new JLabel(randomElement);
                         j1.setFont(new Font("MSMINCHO", Font.BOLD, 16));
-                        j1.setForeground(Color.ORANGE);
+                        j1.setForeground(Color.WHITE);
                         panel.add(j1);
                     }
                     frame.add(panel);
@@ -235,19 +227,5 @@ public class MainPanel {
             }
 
         });
-    }
-
-    private void createUIComponents() {
-        mainJpanel = new JPanel() {
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-
-                ImageIcon m = new ImageIcon("C:\\Users\\Etsuna\\Documents\\GitHub\\HatsuneMiku\\src\\main\\resources\\logo.png");
-                Image monImage = m.getImage();
-                g.drawImage(monImage, 0, 0, this);
-
-            }
-        };
-
     }
 }
