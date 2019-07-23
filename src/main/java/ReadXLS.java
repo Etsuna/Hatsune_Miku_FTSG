@@ -35,7 +35,7 @@ public class ReadXLS {
             float size = Float.valueOf(sizestring.trim()).floatValue();
             if (size >= comboBoxmini && size <= comboBoxmaxi) {
 
-                song.add(row.getCell(0) + " | " + row.getCell(1) + " | " + labeldifficuly + " : " + difficulty + " | Niveau : " + row.getCell(2));
+                song.add(row.getCell(0) + " | " + row.getCell(1) + " | " + labeldifficuly + " : " + difficulty + " | ★ : " + row.getCell(2));
                 System.out.println("");
             }
         }
