@@ -26,6 +26,11 @@ public class MainPanel {
     private JComboBox comboBox2;
     private JPanel checkboxPanel;
     private JPanel fieldJpanel;
+    private JComboBox comboLanguage;
+    private JLabel fieldNumberSongs;
+    private JLabel labelLevelMin;
+    private JLabel labelMaxLevel;
+    private String labeldifficuly;
     private boolean breakSwitch = true;
 
     public static void main(String[] args) {
@@ -40,6 +45,32 @@ public class MainPanel {
 
     // Panel
     public MainPanel() {
+
+        //Check Language
+        comboLanguage.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String comboSelectedValue = (String) comboLanguage.getSelectedItem();
+
+                if (comboSelectedValue.equals("Français")) {
+                    generateButton.setText("Générer");
+                    fieldNumberSongs.setText("Nombre de musique");
+                    labelLevelMin.setText("Level Minimum");
+                    labelMaxLevel.setText("Level Maximum");
+                    labeldifficuly = "Difficulté";
+                }
+
+                if (comboSelectedValue.equals("English")) {
+                    generateButton.setText("Generate");
+                    fieldNumberSongs.setText("Number of music");
+                    labelLevelMin.setText("Minimum level");
+                    labelMaxLevel.setText("Maximum level");
+                    labeldifficuly = "Difficulty";
+                }
+
+            }
+        });
 
 
         // Check box
@@ -135,7 +166,7 @@ public class MainPanel {
 
                     if (easyCheckBox.isSelected()) {
                         try {
-                            new ReadXLS(0, "Easy", song, comboBoxmini, comboBoxmaxi);
+                            new ReadXLS(0, "Easy", song, comboBoxmini, comboBoxmaxi, labeldifficuly);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
@@ -144,7 +175,7 @@ public class MainPanel {
 
                     if (normalCheckBox.isSelected()) {
                         try {
-                            new ReadXLS(1, "Normal", song, comboBoxmini, comboBoxmaxi);
+                            new ReadXLS(1, "Normal", song, comboBoxmini, comboBoxmaxi, labeldifficuly);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
@@ -152,7 +183,7 @@ public class MainPanel {
 
                     if (hardCheckBox.isSelected()) {
                         try {
-                            new ReadXLS(2, "Hard", song, comboBoxmini, comboBoxmaxi);
+                            new ReadXLS(2, "Hard", song, comboBoxmini, comboBoxmaxi, labeldifficuly);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
@@ -160,7 +191,7 @@ public class MainPanel {
 
                     if (extremeCheckBox.isSelected()) {
                         try {
-                            new ReadXLS(3, "Extreme", song, comboBoxmini, comboBoxmaxi);
+                            new ReadXLS(3, "Extreme", song, comboBoxmini, comboBoxmaxi, labeldifficuly);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
@@ -169,7 +200,7 @@ public class MainPanel {
 
                     if (exExtremeCheckBox.isSelected()) {
                         try {
-                            new ReadXLS(4, "Ex Extreme", song, comboBoxmini, comboBoxmaxi);
+                            new ReadXLS(4, "Ex Extreme", song, comboBoxmini, comboBoxmaxi, labeldifficuly);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
@@ -222,7 +253,13 @@ public class MainPanel {
                     }
                 }
                 else {
-                    JOptionPane.showMessageDialog(frame, "Remplissez tous les champs correctement.");
+                    String comboSelectedValue = (String) comboLanguage.getSelectedItem();
+                    if (comboSelectedValue.equals("English")) {
+                        JOptionPane.showMessageDialog(frame, "Fill in all the fields correctly.");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(frame, "Remplissez tous les champs correctement.");
+                    }
                 }
             }
 

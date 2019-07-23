@@ -12,7 +12,7 @@ import org.apache.poi.ss.usermodel.Row;
 
 public class ReadXLS {
 
-    public ReadXLS(int sheetpage, String difficulty, ArrayList song, float comboBoxmini, float comboBoxmaxi) throws IOException {
+    public ReadXLS(int sheetpage, String difficulty, ArrayList song, float comboBoxmini, float comboBoxmaxi, String labeldifficuly) throws IOException {
         // Read XSL file
         FileInputStream inputStream = new FileInputStream(new File("./classes/MusicList.xls"));
 
@@ -35,7 +35,7 @@ public class ReadXLS {
             float size = Float.valueOf(sizestring.trim()).floatValue();
             if (size >= comboBoxmini && size <= comboBoxmaxi) {
 
-                song.add(row.getCell(0) + " | " + row.getCell(1) + " | Difficulté : " + difficulty + " | Niveau : " + row.getCell(2));
+                song.add(row.getCell(0) + " | " + row.getCell(1) + " | " + labeldifficuly + " : " + difficulty + " | Niveau : " + row.getCell(2));
                 System.out.println("");
             }
         }

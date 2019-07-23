@@ -3,21 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e062106a-aaa3-491c-afaa-56f4c08d71a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ReadXLS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReadXLS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/easy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exextreme.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/extreme.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hard.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/normal.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/easy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/exextreme.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/extreme.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hard.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/normal.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wallpaper.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wallpaper.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MusicList.xls" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MusicList.xls" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,8 +30,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            <state relative-caret-position="431">
+              <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3538#3539#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ReadXLS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="130" selection-start-line="14" selection-start-column="130" selection-end-line="14" selection-end-column="130" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,6 +76,7 @@
       <find>JLabel2D</find>
       <find>c:</find>
       <find>wall</find>
+      <find>breakSwitch</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -85,8 +89,8 @@
         <option value="$PROJECT_DIR$/src/main/java/MainPanel.form" />
         <option value="$PROJECT_DIR$/src/main/java/main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/meta-inf/manifest.mf" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Background.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ReadXLS.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.form" />
@@ -139,7 +143,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,6 +197,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,7 +267,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28997868" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29317698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -272,13 +276,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49840087" weight="0.3290461" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.45948827" visible="true" weight="0.33118972" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.45895523" visible="true" weight="0.33118972" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4978678" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.3290461" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5405117" side_tool="true" visible="true" weight="0.33118972" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5410448" side_tool="true" visible="true" weight="0.33118972" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.46268657" weight="0.3290461" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -296,6 +300,10 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Hatsune_Miku_FTSG" />
     </ignored-roots>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HatsuneMiku$MainPanel.ic" NAME="MainPanel Coverage Results" MODIFIED="1562616447706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -344,6 +352,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Background.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logo.png" />
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/javax/imageio/ImageIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="1399" column="18" selection-start-line="1399" selection-start-column="18" selection-end-line="1399" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -353,35 +369,26 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="387" column="18" selection-start-line="387" selection-start-column="18" selection-end-line="387" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/javax/imageio/ImageIO.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
-          <caret line="1399" column="18" selection-start-line="1399" selection-start-column="18" selection-end-line="1399" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ReadXLS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="91" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="387" column="18" selection-start-line="387" selection-start-column="18" selection-end-line="387" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        <state relative-caret-position="431">
+          <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3538#3539#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ReadXLS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="130" selection-start-line="14" selection-start-column="130" selection-end-line="14" selection-end-column="130" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
