@@ -30,7 +30,7 @@ public class MainPanel {
     private JLabel fieldNumberSongs;
     private JLabel labelLevelMin;
     private JLabel labelMaxLevel;
-    private String labeldifficuly;
+    private String labeldifficuly = "Difficulté";
     private boolean breakSwitch = true;
 
     public static void main(String[] args) {
@@ -56,16 +56,16 @@ public class MainPanel {
                 if (comboSelectedValue.equals("Français")) {
                     generateButton.setText("Générer");
                     fieldNumberSongs.setText("Nombre de musique");
-                    labelLevelMin.setText("Level Minimum");
-                    labelMaxLevel.setText("Level Maximum");
+                    labelLevelMin.setText("Difficulté Minimale");
+                    labelMaxLevel.setText("Difficulté Maximale");
                     labeldifficuly = "Difficulté";
                 }
 
                 if (comboSelectedValue.equals("English")) {
                     generateButton.setText("Generate");
                     fieldNumberSongs.setText("Number of music");
-                    labelLevelMin.setText("Minimum level");
-                    labelMaxLevel.setText("Maximum level");
+                    labelLevelMin.setText("Minimum Difficulty");
+                    labelMaxLevel.setText("Maximum Difficulty");
                     labeldifficuly = "Difficulty";
                 }
 
